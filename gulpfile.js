@@ -142,5 +142,5 @@ exports.svgSprites = svgSprites;
 exports.htmlInclude = htmlInclude;
 exports.deploy = deploy;
 
-exports.build = series(cleanDist, imagesWebp, images, build);
+exports.build = series(cleanDist, images, build);//(cleanDist, imagesWebp, images, build)
 exports.default = parallel(htmlInclude,styles, scripts, browsersync, watching, svgSprites);
