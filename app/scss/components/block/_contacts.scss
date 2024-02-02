@@ -1,0 +1,196 @@
+.contacts {
+
+	position: relative;
+	padding-bottom: 94px;
+
+	&__title {
+		margin-bottom: 123px;
+		text-align: center;
+	}
+
+	&__inner {
+		display: flex;
+		gap: 20px;
+
+		@include mq('phone'){
+			flex-direction: column;
+			gap: 40px;
+		}
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		gap: 67px;
+		margin-top: 25px;
+
+		@include mq('phone'){
+			align-items: start;
+		}
+	}
+
+	&__box {
+		width: 329px;
+
+		@include mq('phone'){
+			width: 100%;
+		}
+	}
+
+	&__label {
+		font-size: 18px;
+		font-weight: 700;
+		padding-left: 39px;
+		margin-bottom: 20px;
+		position: relative;
+
+		&::before {
+			@include pseudo();
+			top: 0;
+			left: 0;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center;
+			width: 24px;
+			height: 24px;
+		}
+
+		&--mobile::before {
+			background-image: url('../images/icon/mobile.svg');
+		}
+
+		&--email::before {
+			background-image: url('../images/icon/email.svg');
+		}
+
+		&--adress::before {
+			background-image: url('../images/icon/adress.svg');
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 13px;
+		padding-left: 39px;
+	}
+
+	&__item {
+		display: flex;
+		align-items:center;
+		gap: 29px;
+		font-size: 18px;
+		font-weight: 500;
+		color: #B6B6B6;
+
+		@include mq('phone'){
+			font-size: 16px;
+			gap: 15px;
+		}
+	}
+
+
+	&__link {
+		font-weight: 400;
+		font-size: 13px;
+		line-height: 1;
+		padding: 7px 42px;
+	}
+
+	&__map {
+		position: absolute;
+		right: 0;
+		bottom: -60px;
+	}
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	max-width: 586px;
+	width: 100%;
+
+	&__label {
+		display: block;
+		font-size: 18px;
+		font-weight: 500;
+	}
+
+	&__input,
+	&__textarea {
+		display: block;
+		padding: 11px 9px;
+		background-color: transparent;
+		font-size: 18px;
+		font-weight: 500;
+		border: none;
+		border-bottom: 1px solid #536A82;
+		width: 100%;
+		margin-top: 17px;
+		color: #fff;
+		outline: 0;
+
+		&::placeholder {
+			font-family: 'Fira Sans', sans-serif;
+			font-size: 18px;
+			font-weight: 500;
+			color: #2E2E2E;
+		}
+	}
+
+	&__textarea {
+		height: 100px;
+		resize: none;
+	}
+
+	&__btn {
+		align-self: start;
+		margin-top: 45px;
+	}
+}
+
+.map {
+	display: flex;
+	transform: translateX(400px);
+	transition: transform ease-in-out .7s;
+
+	&__lable {
+		background-color: $accent;
+		border-radius: 67px 0 4px 4px;
+		width: 136px;
+		height: 102px;
+		display: flex;
+		justify-content: center;
+		align-items:center;
+		box-shadow: 0px 10px 29px rgba(64, 129, 255, 0.24);
+
+		@include mq('phone'){
+			width: 100px;
+			height: 70px;
+		}
+	}
+
+	&__icon {
+
+		@include mq('phone'){
+			width: 30px;
+		}
+	}
+
+	&__frame {
+
+		@include mq('phone'){
+			width: 200px;
+			height: 150px;
+		}
+	}
+
+	&:hover {
+		transform: translateX(0);
+	}
+
+
+}

@@ -1,0 +1,46 @@
+.footer {
+	background-color: #0A0F14;
+	padding: 73px 0;
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__logo {
+		display: inline-block;
+		margin-bottom: 38px;
+	}
+
+	&__text {
+		max-width: 560px;
+		font-size: 18px;
+		color: #787878;
+		margin-bottom: 42px;
+	}
+
+	&__menu {
+		margin-bottom: 78px;
+	}
+
+	&__social {
+		margin-bottom: 62px;
+	}
+}
+
+.footer-menu {
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		gap: 98px;
+
+		@include mq('tablet'){
+			flex-direction: column;
+			align-items: center;
+			gap: 15px;
+		}
+	}
+}

@@ -1,0 +1,136 @@
+.question {
+
+  margin-bottom: 220px;
+
+  @include mq("desktop-2") {
+    margin-bottom: 150px;
+  }
+
+  @include mq("tablet-2") {
+    margin-bottom: 150px;
+  }
+
+  @include mq("tablet") {
+    margin-bottom: 80px;
+  }
+
+  @include mq("phone") {
+    margin-bottom: 60px;
+  }
+
+  &__title {
+    margin-bottom: 42px;
+
+    @include mq("desktop-2") {
+      margin-bottom: 50px;
+    }
+
+    @include mq("phone") {
+      margin-bottom: 40px;
+    }
+  }
+
+	&__list{
+		display: flex;
+		flex-direction: column;
+		gap: 28px;
+	}
+
+  
+
+  &__item {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 32px;
+    right: 25px;
+    width: 19px;
+    height: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+
+		path {
+			transition: fill 0.5s ease-in-out;
+		}
+
+    @include mq("phone") {
+      width: 24px;
+      height: 24px;
+      right: 5px;
+      top: 23px;
+    }
+
+    
+
+  }
+
+  &__name {
+		font-size: 24px;
+		font-weight: 800;
+		line-height: 1.2;
+		background-color: #11161C;
+		border-radius: 4px;
+		padding: 24px;
+		text-transform: uppercase;
+		transition: all 0.5s ease-in-out;
+		border: 1px solid transparent;
+
+    @include mq("phone") {
+      font-size: 16px;
+    }
+  }
+
+  &__answer {
+    overflow: hidden;
+    max-height: 800px;
+    opacity: 1;
+    transform: translate(0, 0);
+		font-size: 16px;
+    font-weight: 400;
+    z-index: 2;
+    transition: all 0.5s ease-in-out;
+		background-color: #1B2837;
+		padding: 24px 40px;
+		border: 1px solid $accent;
+		border-top: none;
+
+    @include mq("phone") {
+      font-size: 14px;
+    }
+  }
+
+  &__input {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    position: absolute;
+
+
+    &:checked~.question__answer {
+      margin-top: -50px;
+      max-height: 0;
+      opacity: 0;
+      transform: translate(0, -50%);
+    }
+
+		&:not(:checked)~.question__name {
+			border-color: $accent;
+			border-bottom: none;
+		}
+
+		&:not(:checked)~.question__icon {
+			transform: rotateX(180deg);
+
+			path {
+				fill: $accent;
+			}
+		}
+
+  }
+}
